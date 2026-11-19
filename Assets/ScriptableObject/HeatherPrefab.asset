@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3d76537a67ba39428ce79661d53b944, type: 3}
+  m_Name: HeatherPrefab
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterDefinition
+  characterId: heather_lvl_1
+  characterName: Heather
+  description: 
+  visualPrefab: {fileID: 4510143924719052901, guid: 4d38a00cf4c66484f8286f91cd9b414b, type: 3}
+  portrait: {fileID: 7741138407256789495, guid: b08dc9f53281eed499948b0228e0bf37, type: 3}
+  walkSpeed: 3
+  sprintSpeed: 5
+  invSlot: 12
+  maxHealth: 5
+  meleeDmg: 3
+  rangedDmg: 5
+  maxCharge: 3

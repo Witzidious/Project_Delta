@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 236665e65d139d14b94b5383c3ab17e3, type: 3}
+  m_Name: RustyKey
+  m_EditorClassIdentifier: Assembly-CSharp::InventoryItem
+  worldPrefab: {fileID: 1596297884177616588, guid: a89b6409ed5fa774a883ad76b084ee8e, type: 3}
+  itemId: rusty_key
+  itemName: Rusty Key
+  itemStatus: 
+  description: A rusty key
+  icon: {fileID: 1694913177206695654, guid: 000b632d323eed24aa538f7db98f9245, type: 3}
