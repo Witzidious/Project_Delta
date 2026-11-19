@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
@@ -10,6 +11,12 @@ public class MenuManager : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] private bool resumeGameOnClose = true;
+
+    
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 
     private void Awake()
     {
