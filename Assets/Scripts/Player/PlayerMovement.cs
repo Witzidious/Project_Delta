@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private Animator animator;
+    private SpriteRenderer spriteRenderer; // Added
     private Vector2 movementInput;
     private Vector2 facingDirection = Vector2.down;
     private bool isSprinting;
@@ -22,7 +23,9 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>(); // Added
     }
+
     public void SetAnimator(Animator newAnimator)
     {
         animator = newAnimator;
@@ -33,33 +36,25 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        Debug.Log("PlayerMovement: Animator connected to "
-                  + animator.gameObject.name);
+        // Keep SpriteRenderer in sync if visuals are swapped
+        spriteRenderer = animator.GetComponent<SpriteRenderer>();
+        //transform.localScale = Vector3.one * 5;
+
+        Debug.Log("PlayerMovement: Animator connected to " + animator.gameObject.name);
     }
 
     private void OnEnable()
     {
-        if (walkAction != null)
-        {
-            walkAction.action.Enable();
-        }
-        if (sprintAction != null)
-        {
-            sprintAction.action.Enable();
-        }
+        if (walkAction != null) walkAction.action.Enable();
+        if (sprintAction != null) sprintAction.action.Enable();
     }
 
     private void OnDisable()
     {
-        if (walkAction != null)
-        {
-            walkAction.action.Disable();
-        }
-        if (sprintAction != null)
-        {
-            sprintAction.action.Disable();
-        }
+        if (walkAction != null) walkAction.action.Disable();
+        if (sprintAction != null) sprintAction.action.Disable();
     }
+
     public void SetMovementSpeeds(float walk, float sprint)
     {
         walkSpeed = walk;
@@ -78,7 +73,9 @@ public class PlayerMovement : MonoBehaviour
         {
             isSprinting = sprintAction.action.IsPressed();
         }
+
         UpdateFacingDirection();
+        UpdateSpriteFlip(); // Added
         UpdateAnimator();
     }
 
@@ -92,37 +89,43 @@ public class PlayerMovement : MonoBehaviour
     {
         if (movementInput.sqrMagnitude < 0.01f) return;
 
-        if (Mathf.Abs(movementInput.x) >
-            Mathf.Abs(movementInput.y))
+        if (Mathf.Abs(movementInput.x) > Mathf.Abs(movementInput.y))
         {
-            facingDirection = movementInput.x > 0
-                ? Vector2.right
-                : Vector2.left;
+            facingDirection = movementInput.x > 0 ? Vector2.right : Vector2.left;
         }
         else
         {
-            facingDirection = movementInput.y > 0
-                ? Vector2.up
-                : Vector2.down;
+            facingDirection = movementInput.y > 0 ? Vector2.up : Vector2.down;
+        }
+    }
+
+    private void UpdateSpriteFlip()
+    {
+        if (spriteRenderer == null) return;
+
+        // Assumes default sprite faces RIGHT.
+        // If your sprite faces LEFT by default, change Vector2.left to Vector2.right.
+        if (facingDirection == Vector2.left)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else
+        {
+            spriteRenderer.flipX = false;
         }
     }
 
     private void UpdateAnimator()
     {
-        if (animator == null)
-            return;
+        if (animator == null) return;
 
         bool isMoving = movementInput.sqrMagnitude > 0.01f;
 
         animator.SetBool("isMoving", isMoving);
         animator.SetBool("isSprinting", isSprinting);
 
-        animator.SetFloat("moveX", isMoving ? facingDirection.x : 0f);
+        // Use Mathf.Abs so both Left (-1) and Right (+1) trigger your single side-walk state
+        animator.SetFloat("moveX", isMoving ? Mathf.Abs(facingDirection.x) : 0f);
         animator.SetFloat("moveY", isMoving ? facingDirection.y : 0f);
     }
-    void Start()
-    {
-        
-    }
-
 }

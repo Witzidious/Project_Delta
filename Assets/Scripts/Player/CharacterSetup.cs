@@ -43,7 +43,7 @@ public class CharacterSetup : MonoBehaviour
 
         currentVisual.transform.localPosition = Vector3.zero;
         currentVisual.transform.localRotation = Quaternion.identity;
-        currentVisual.transform.localScale = Vector3.one;
+        // currentVisual.transform.localScale = Vector3.one;
 
         // Tìm Animator trong Visual vừa tạo
         Animator visualAnimator = currentVisual.GetComponentInChildren<Animator>(true);

@@ -129,6 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 373014779}
   - component: {fileID: 373014778}
+  - component: {fileID: 373014780}
   m_Layer: 0
   m_Name: MenuController
   m_TagString: Untagged
@@ -167,6 +168,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &373014780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373014777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f8bdf29dd3ed7c44a0d57cb5c30a57d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MenuManager
+  menus:
+  - {fileID: 423498632}
+  - {fileID: 905914070}
+  - {fileID: 1303507342}
+  resumeGameOnClose: 1
 --- !u!1 &406384930
 GameObject:
   m_ObjectHideFlags: 0
@@ -1114,7 +1132,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &905914071
 MonoBehaviour:
   m_ObjectHideFlags: 0

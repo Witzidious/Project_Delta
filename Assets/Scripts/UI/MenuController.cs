@@ -16,15 +16,19 @@ public class MenuController : MonoBehaviour
     }
     public void OpenLoad()
     {
-        settingsPanel.SetActive(true);
+        settingsPanel.SetActive(false);
+        loadGamePanel.SetActive(true);
+        creditsPanel.SetActive(false);
     }
     public void CloseLoad()
     {
-        settingsPanel.SetActive(false);
+        loadGamePanel.SetActive(false);
     }
     public void OpenSettings()
     {
         settingsPanel.SetActive(true);
+        loadGamePanel.SetActive(false);
+        creditsPanel.SetActive(false);
     }
 
     public void CloseSettings()
@@ -34,6 +38,8 @@ public class MenuController : MonoBehaviour
 
     public void OpenCredits()
     {
+        settingsPanel.SetActive(false);
+        loadGamePanel.SetActive(false);
         creditsPanel.SetActive(true);
     }
 
