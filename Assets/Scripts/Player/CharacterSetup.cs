@@ -73,6 +73,11 @@ public class CharacterSetup : MonoBehaviour
             Debug.LogError("PlayerMovement component not found!");
         }
 
+        PlayerInteraction interaction = GetComponent<PlayerInteraction>();
+
+        if (interaction != null)
+            interaction.SetAnimator(visualAnimator);
+
         Debug.Log(
             "Character loaded: " + characterData.characterName
         );

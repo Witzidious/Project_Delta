@@ -40,7 +40,6 @@ public abstract class InteractableBase : MonoBehaviour, Interactable
 
         renderer.sprite = promptSprite;
         renderer.sortingOrder = promptSortingOrder;
-        renderer.sortingLayerID = 1;
 
         CircleCollider2D trigger =
             promptObject.AddComponent<CircleCollider2D>();

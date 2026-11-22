@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class PlayerInteraction : MonoBehaviour
 {
@@ -11,9 +12,23 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private LayerMask interactableLayer;
 
     private Vector2 facingDirection = Vector2.down;
-    void Start()
+    private Animator animator;
+    private bool isInteracting;
+    private void Awake()
     {
-        
+        animator = GetComponentInChildren<Animator>();
+    }
+    public void SetAnimator(Animator newAnimator)
+    {
+        animator = newAnimator;
+
+        if (animator == null)
+        {
+            Debug.LogError("PlayerMovement: Animator is NULL!");
+            return;
+        }
+        Debug.Log("PlayerInteraction received Animator: " + animator.name);
+
     }
     private void OnEnable()
     {
@@ -58,8 +73,12 @@ public class PlayerInteraction : MonoBehaviour
 
     private void TryInteract()
     {
-        Vector2 position = (Vector2)transform.position
-                         + facingDirection * interactionDistance;
+        if (isInteracting)
+            return;
+
+        Vector2 position =
+            (Vector2)transform.position +
+            facingDirection * interactionDistance;
 
         Collider2D hit = Physics2D.OverlapCircle(
             position,
@@ -70,11 +89,38 @@ public class PlayerInteraction : MonoBehaviour
         if (hit == null)
             return;
 
-
-
         Interactable interactable = hit.GetComponent<Interactable>();
 
-        interactable?.Interact();
+        if (interactable == null)
+            return;
+
+        StartCoroutine(InteractionRoutine());
+
+        interactable.Interact();
+    }
+    private IEnumerator InteractionRoutine()
+    {
+        SetInteracting(true);
+
+        yield return new WaitForSeconds(
+            animator.GetCurrentAnimatorStateInfo(0).length
+        );
+
+        SetInteracting(false);
+    }
+    public void SetInteracting(bool value)
+    {
+        isInteracting = value;
+
+        if (animator == null)
+        {
+            Debug.LogError("PlayerInteraction: Animator is NULL!");
+            return;
+        }
+
+        animator.SetBool("isInteracting", value);
+
+        Debug.Log("Set isInteracting = " + value);
     }
 
     private void OnDrawGizmosSelected()

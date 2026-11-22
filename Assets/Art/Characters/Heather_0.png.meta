@@ -1,10 +1,37 @@
 fileFormatVersion: 2
-guid: ff4e7b0b84d281a41992652fa8b04065
+guid: 740067963ba645049acdbccff37ab1f3
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: 6913364293422837917
     second: Heather_0_0
+  - first:
+      213: 3600205660239275670
+    second: Heather_0_1
+  - first:
+      213: 8137902546424944287
+    second: Heather_0_2
+  - first:
+      213: 9039993683170650363
+    second: Heather_0_3
+  - first:
+      213: 9163496977825291182
+    second: Heather_0_4
+  - first:
+      213: 1700279066121339260
+    second: Heather_0_5
+  - first:
+      213: 5971091205120087815
+    second: Heather_0_6
+  - first:
+      213: 227513523814115244
+    second: Heather_0_7
+  - first:
+      213: -2059381106096088713
+    second: Heather_0_8
+  - first:
+      213: 6545868383932450798
+    second: Heather_0_9
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,12 +130,12 @@ TextureImporter:
       name: Heather_0_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 79
         y: 0
-        width: 227
-        height: 227
+        width: 172
+        height: 320
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -125,20 +152,20 @@ TextureImporter:
       name: Heather_0_1
       rect:
         serializedVersion: 2
-        x: 227
+        x: 399
         y: 0
-        width: 227
-        height: 227
+        width: 242
+        height: 320
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 5747828e251d2754d9e9df4ff394cffe
-      internalID: 543218477
+      spriteID: 696a9e829ff76f130800000000000000
+      internalID: 3600205660239275670
       vertices: []
       indices: 
       edges: []
@@ -147,20 +174,20 @@ TextureImporter:
       name: Heather_0_2
       rect:
         serializedVersion: 2
-        x: 454
+        x: 719
         y: 0
-        width: 227
-        height: 227
+        width: 172
+        height: 320
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: d9df3a0439e06974bb8c31117cb66ae1
-      internalID: 1307004354
+      spriteID: f96d760ef33afe070800000000000000
+      internalID: 8137902546424944287
       vertices: []
       indices: 
       edges: []
@@ -169,20 +196,20 @@ TextureImporter:
       name: Heather_0_3
       rect:
         serializedVersion: 2
-        x: 681
+        x: 1039
         y: 0
-        width: 227
-        height: 227
+        width: 202
+        height: 320
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 51de2b94a02bc664d9e13c2df3cd37ea
-      internalID: -13724187
+      spriteID: bf86921eb52847d70800000000000000
+      internalID: 9039993683170650363
       vertices: []
       indices: 
       edges: []
@@ -191,20 +218,20 @@ TextureImporter:
       name: Heather_0_4
       rect:
         serializedVersion: 2
-        x: 908
+        x: 1369
         y: 0
-        width: 227
-        height: 227
+        width: 182
+        height: 320
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: e3bb2e23f244778489bc190396e32d03
-      internalID: -1814029728
+      spriteID: eab54a773f74b2f70800000000000000
+      internalID: 9163496977825291182
       vertices: []
       indices: 
       edges: []
@@ -213,20 +240,20 @@ TextureImporter:
       name: Heather_0_5
       rect:
         serializedVersion: 2
-        x: 1135
+        x: 1729
         y: 0
-        width: 227
-        height: 227
+        width: 132
+        height: 320
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: a7e581979bc547d479fb91bb61030b9e
-      internalID: 391480878
+      spriteID: c71023b5dca989710800000000000000
+      internalID: 1700279066121339260
       vertices: []
       indices: 
       edges: []
@@ -235,20 +262,20 @@ TextureImporter:
       name: Heather_0_6
       rect:
         serializedVersion: 2
-        x: 1362
+        x: 1999
         y: 0
-        width: 227
-        height: 227
+        width: 212
+        height: 320
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 6ade9ff5ccfae6c4eb96aea65ef01b82
-      internalID: 1442378321
+      spriteID: 70754aa90d39dd250800000000000000
+      internalID: 5971091205120087815
       vertices: []
       indices: 
       edges: []
@@ -257,20 +284,20 @@ TextureImporter:
       name: Heather_0_7
       rect:
         serializedVersion: 2
-        x: 1589
+        x: 2339
         y: 0
-        width: 227
-        height: 227
+        width: 192
+        height: 320
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: c9d591e13e4ba70429cbaa1d77dc11f1
-      internalID: 457718890
+      spriteID: ca7a980385a482300800000000000000
+      internalID: 227513523814115244
       vertices: []
       indices: 
       edges: []
@@ -279,20 +306,42 @@ TextureImporter:
       name: Heather_0_8
       rect:
         serializedVersion: 2
-        x: 1816
+        x: 2689
         y: 0
-        width: 227
-        height: 227
+        width: 132
+        height: 320
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 83881ec76baf5414583bd112ef140100
-      internalID: -439244919
+      spriteID: 779ddf98bcb9b63e0800000000000000
+      internalID: -2059381106096088713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heather_0_9
+      rect:
+        serializedVersion: 2
+        x: 2959
+        y: 0
+        width: 212
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee701ca1d9897da50800000000000000
+      internalID: 6545868383932450798
       vertices: []
       indices: 
       edges: []
@@ -301,7 +350,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 009d0ea11ef5d3d428932ff8e38b6c06
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -309,19 +358,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":227.0,"y":227.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
       Heather_0_0: 6913364293422837917
-      Heather_0_1: 543218477
-      Heather_0_2: 1307004354
-      Heather_0_3: -13724187
-      Heather_0_4: -1814029728
-      Heather_0_5: 391480878
-      Heather_0_6: 1442378321
-      Heather_0_7: 457718890
-      Heather_0_8: -439244919
+      Heather_0_1: 3600205660239275670
+      Heather_0_2: 8137902546424944287
+      Heather_0_3: 9039993683170650363
+      Heather_0_4: 9163496977825291182
+      Heather_0_5: 1700279066121339260
+      Heather_0_6: 5971091205120087815
+      Heather_0_7: 227513523814115244
+      Heather_0_8: -2059381106096088713
+      Heather_0_9: 6545868383932450798
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

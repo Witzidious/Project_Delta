@@ -27,7 +27,6 @@ public class PromptDetector : MonoBehaviour
         playerCount++;
 
         ShowPrompt();
-        Debug.Log("Player entered InteractionPrompt range");
     }
 
     private void OnTriggerExit2D(Collider2D other)
