@@ -78,6 +78,20 @@ public class PlayerMovement : MonoBehaviour
         UpdateSpriteFlip(); // Added
         UpdateAnimator();
     }
+    public void RefreshInputActions()
+    {
+        if (walkAction != null)
+        {
+            walkAction.action.Enable();
+        }
+
+        if (sprintAction != null)
+        {
+            sprintAction.action.Enable();
+        }
+
+        Debug.Log("PlayerMovement Input Actions refreshed!");
+    }
 
     private void FixedUpdate()
     {

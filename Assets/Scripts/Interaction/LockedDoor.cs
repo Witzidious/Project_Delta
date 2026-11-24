@@ -1,43 +1,76 @@
+
 using UnityEngine;
 
+[RequireComponent(typeof(BoxCollider2D))]
+[RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(SceneStateID))]
 public class LockedDoor : InteractableBase
 {
+    [Header("Door Settings")]
     [SerializeField] private string requiredItemId = "rusty_key";
-    private bool open = false;
-    void Start()
+
+    private SceneStateID stateId;
+    private BoxCollider2D doorCollider;
+    private SpriteRenderer doorRenderer;
+
+    private bool isOpen = false;
+
+    protected override void Awake()
     {
-        
+        // Quan trọng: gọi Awake của InteractableBase
+        // để tạo InteractionPrompt.
+        base.Awake();
+
+        stateId = GetComponent<SceneStateID>();
+        doorCollider = GetComponent<BoxCollider2D>();
+        doorRenderer = GetComponent<SpriteRenderer>();
     }
-    void Update()
+
+    private void Start()
     {
-        
+        isOpen = stateId.GetState("Opened");
+        UpdateDoorVisual();
     }
 
     public override void Interact()
     {
-        if (open == true)
+        if (isOpen)
         {
-            Debug.Log("Door locked!");
-            open = false;
-            gameObject.GetComponent<BoxCollider2D>().enabled = true;
-            gameObject.GetComponent<SpriteRenderer>().color = Color.white;
-        }
-        else if (InventoryManager.Instance.HasItem(requiredItemId))
-        {
-            Debug.Log("Door unlocked!");
-            open = true;
+            Debug.Log("Closing door!");
 
-            InventoryManager.Instance.UseItem(requiredItemId);
-
-            //InventoryManager.Instance.RemoveItem(requiredItemId);
-            //Destroy(gameObject);
-
-            gameObject.GetComponent<BoxCollider2D>().enabled = false;
-            gameObject.GetComponent<SpriteRenderer>().color = Color.grey;
+            isOpen = false;
+            stateId.SetState("Opened", false);
+            UpdateDoorVisual();
         }
         else
         {
-            Debug.Log("The door is locked. I need a key.");
+            if (InventoryManager.Instance == null)
+            {
+                Debug.LogError("InventoryManager is missing!");
+                return;
+            }
+
+            if (InventoryManager.Instance.HasItem(requiredItemId))
+            {
+                Debug.Log("Door unlocked!");
+
+                isOpen = true;
+                stateId.SetState("Opened", true);
+
+                InventoryManager.Instance.UseItem(requiredItemId);
+
+                UpdateDoorVisual();
+            }
+            else
+            {
+                Debug.Log("The door is locked. I need a key.");
+            }
         }
+    }
+
+    private void UpdateDoorVisual()
+    {
+        doorCollider.isTrigger = isOpen;
+        doorRenderer.color = isOpen ? Color.grey : Color.white;
     }
 }

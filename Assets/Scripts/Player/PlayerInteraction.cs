@@ -90,6 +90,7 @@ public class PlayerInteraction : MonoBehaviour
             return;
 
         Interactable interactable = hit.GetComponent<Interactable>();
+        //InteractableBase interactable = hit.GetComponentInParent<InteractableBase>();
 
         if (interactable == null)
             return;
@@ -121,6 +122,15 @@ public class PlayerInteraction : MonoBehaviour
         animator.SetBool("isInteracting", value);
 
         Debug.Log("Set isInteracting = " + value);
+    }
+    public void RefreshInputAction()
+    {
+        if (interactAction != null)
+        {
+            interactAction.action.Enable();
+        }
+
+        Debug.Log("PlayerInteraction Input Action refreshed!");
     }
 
     private void OnDrawGizmosSelected()

@@ -27,5 +27,9 @@ public class Camera : MonoBehaviour
             smoothTime
         );
     }
+    public void SetTarget(Transform newTarget)
+    {
+        target = newTarget;
+    }
 }
 

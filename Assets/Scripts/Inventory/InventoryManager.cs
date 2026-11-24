@@ -176,6 +176,17 @@ public class InventoryManager : MonoBehaviour
         if (droppedItem == null)
             return false;
 
+        ItemPickup itemPickup = droppedItem.GetComponent<ItemPickup>();
+
+        if (itemPickup != null)
+        {
+            itemPickup.DropItem();
+        }
+        else
+        {
+            Debug.LogWarning("ItemPickup component is missing!");
+        }
+
         // Chỉ xóa item khỏi Inventory sau khi tạo prefab thành công
         items[slotIndex] = null;
 
