@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-public abstract class InteractableBase : MonoBehaviour, Interactable
+public abstract class InteractableBase : MonoBehaviour, IInteractable
 {
     [Header("Interaction Prompt")]
     [SerializeField] protected Sprite promptSprite;

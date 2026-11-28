@@ -33,7 +33,16 @@ public class ItemPickup : InteractableBase
         {
             Debug.Log("Picked up: " + item.itemName);
             if (stateId != null) stateId.SetState("Collected", true);
-            Destroy(gameObject);
+            PersistentEntity entity = GetComponent<PersistentEntity>();
+
+            if (entity != null && EntityManager.Instance != null)
+            {
+                EntityManager.Instance.RemoveEntity(entity);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
         else
         {

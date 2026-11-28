@@ -89,7 +89,7 @@ public class PlayerInteraction : MonoBehaviour
         if (hit == null)
             return;
 
-        Interactable interactable = hit.GetComponent<Interactable>();
+        IInteractable interactable = hit.GetComponent<IInteractable>();
         //InteractableBase interactable = hit.GetComponentInParent<InteractableBase>();
 
         if (interactable == null)

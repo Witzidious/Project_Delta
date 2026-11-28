@@ -11,4 +11,5 @@ public class DontDestroyOnLoad : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
+
 }

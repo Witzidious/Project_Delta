@@ -28,6 +28,14 @@ public class MenuManager : MonoBehaviour
 
         Instance = this;
     }
+    private void OnDestroy()
+    {
+        if (Instance == this)
+        {
+            Instance = null;
+            Debug.Log("MenuManager instance cleared.");
+        }
+    }
 
     private void Update()
     {

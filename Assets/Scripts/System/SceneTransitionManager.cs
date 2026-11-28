@@ -35,6 +35,9 @@ public class SceneTransitionManager : MonoBehaviour
     {
         targetSpawnId = spawnId;
 
+        // Lưu toàn bộ entity trong Scene hiện tại
+        EntityManager.Instance?.SaveCurrentScene();
+
         SceneManager.LoadScene(sceneName);
     }
 

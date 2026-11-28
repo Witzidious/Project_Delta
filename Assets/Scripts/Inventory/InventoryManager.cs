@@ -166,8 +166,13 @@ public class InventoryManager : MonoBehaviour
         Vector3 dropPosition =
             player.transform.position + new Vector3(0.75f, 0f, 0f);
 
-        // Tạo item trong thế giới
-        GameObject droppedItem = Instantiate(
+        if (EntityManager.Instance == null)
+        {
+            Debug.LogError("EntityManager is missing!");
+            return false;
+        }
+
+        GameObject droppedItem = EntityManager.Instance.SpawnEntity(
             item.worldPrefab,
             dropPosition,
             Quaternion.identity

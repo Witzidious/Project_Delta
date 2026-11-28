@@ -9,10 +9,16 @@ public class MenuController : MonoBehaviour
     [SerializeField] private GameObject settingsPanel;
     [SerializeField] private GameObject creditsPanel;
 
+    [Header("Scene Transition")]
+    [SerializeField] private string targetSpawnId;
+
     public void NewGame()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(startScene);
+        SceneTransitionManager.Instance.LoadScene(
+            startScene,
+            targetSpawnId
+        );
     }
     public void OpenLoad()
     {
